@@ -60,9 +60,7 @@ def GetPubs(_id):
     shitstring=''
     for item in r:
         i=i+1
-        #if r[0]==item:
-            # f.write('#first#'+_id + '\n')
-           # print(item)
+
         shitstring = shitstring+ str(item)+'\n'
     return shitstring
 
@@ -226,31 +224,7 @@ def stats_pub_csv(*paths):
                 print(str(key[0]) + ' ' + str(key[1]))
 
                 w.writerows([key])
-"""
-wb = xlwt.Workbook()
-wa = wb.add_sheet('work1')
 
-style1 = xlwt.XFStyle()
-style1.num_format_str = 'D-MMM-YY'
-
-wb = xlwt.Workbook()
-ws = wb.add_sheet('A Test Sheet')
-
-ws.write(0, 0, 'Test')
-ws.write(1, 0, datetime.datetime.now().date(), style1)
-ws.write(2, 0, 1)
-ws.write(2, 1, 1)
-ws.write(2, 2, xlwt.Formula("A3+B3"))
-
-wb.save('tree.xls')
-
-###########################################################################################################
-for i in range(1,10):
-    ra = requests.get('https://api.vk.com/method/users.getSubscriptions?&user_id={}'.format(i)).json()
-    r = ra['response']['groups']['items']
-    print(ra)
-##Time:2.3571298122406006	0.23571
-"""
 
 async def get(url, out, typo='pubs'):
     async with ClientSession() as session:
@@ -333,7 +307,8 @@ def fast_stats_pub_csv(*paths):
             w.writerows([key])
 
 fast_stats_pub_csv('santa_muerte')
-#stats_pub_csv('letmepaint')
+
+
 """streng=['ass','1','jopa','bang']
 with open('1.csv', 'w',newline='') as f1:
     w = csv.writer(f1)
